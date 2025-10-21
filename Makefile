@@ -22,4 +22,7 @@ ifeq ($(SIDELOADING),1)
 $(TWEAK_NAME)_FILES += Sideloading.xm
 endif
 
+# ✅ Fix variable-length array build error from Logos auto-generated code
+export CFLAGS += -Wno-vla-cxx-extension
+
 include $(THEOS_MAKE_PATH)/tweak.mk
